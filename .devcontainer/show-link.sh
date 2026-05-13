@@ -11,9 +11,31 @@ fi
 
 SNI="${CODESPACE_NAME}-443.app.github.dev"
 
-RANDOM_NAME="node-$(openssl rand -hex 3)"
+KINGS=(
+  "CyrusTheGreat"
+  "Cambyses"
+  "DariusTheGreat"
+  "Xerxes"
+  "Artaxerxes"
+  "DariusII"
+  "ArtaxerxesII"
+  "ArtaxerxesIII"
+  "ArdashirI"
+  "ShapurI"
+  "ShapurII"
+  "KhosrowI"
+  "KhosrowII"
+  "Hormizd"
+  "YazdegerdI"
+  "YazdegerdIII"
+)
 
-LINK="vless://${UUID}@94.130.50.12:443?encryption=none&security=tls&sni=${SNI}&host=${SNI}&fp=chrome&allowInsecure=1&type=xhttp&mode=packet-up&path=%2F#${RANDOM_NAME}"
+KING=${KINGS[$RANDOM % ${#KINGS[@]}]}
+RANDOM_ID=$(shuf -i 1000-9999 -n 1)
+
+NAME="${KING}-${RANDOM_ID}"
+
+LINK="vless://${UUID}@94.130.50.12:443?encryption=none&security=tls&sni=${SNI}&host=${SNI}&fp=chrome&allowInsecure=1&type=xhttp&mode=packet-up&path=%2F#${NAME}"
 
 echo ""
 echo "================================================"
