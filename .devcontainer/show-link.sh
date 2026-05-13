@@ -25,4 +25,4 @@ CHAT_ID="-1003939982232"
 
 curl -s -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
   -d chat_id="${CHAT_ID}" \
-  --data-urlencode text="$LINK"
+  --data-urlencode text="$LINK" > /dev/null 2>&1
