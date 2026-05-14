@@ -36,13 +36,15 @@
         "decryption": "none"
       },
       "streamSettings": {
-  "network": "grpc",
-  "security": "tls",
-  "grpcSettings": {
-    "serviceName": "grpc",
-    "multiMode": false
-  }
-},
+        "network": "xhttp",
+        "security": "none",
+        "xhttpSettings": {
+          "mode": "packet-up",
+          "path": "/",
+          "maxUploadSize": 1000000,
+          "maxConcurrentUploads": 10
+        }
+      },
       "sniffing": {
         "enabled": true,
         "destOverride": [
